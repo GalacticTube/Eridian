@@ -1,11 +1,8 @@
 const Discord = require("discord.js");
-
+const fetch = require('node-fetch');
 const bot = new Discord.Client();
-
 const ytdl = require("ytdl-core");
-
-const prefix  = process.env.BOT_PREFIX;
-
+const prefix  = process.env.BOT_TOKEN;
 const status = process.env.BOT_STATUS;
 
 var queue = new Map();
@@ -53,6 +50,55 @@ bot.on("message", async message => {
       bot.guilds.forEach(guild => {
       bot.users.get(guild.ownerID).send(announcement);
     });
+  }
+
+  if(command === 'vote') {
+  message.channel.send('https://top.gg/bot/674358606233337886/');
+}
+
+if(command === 'avatar') {
+  message.reply(message.author.avatarURL);
+}
+
+  if(command === "purge") {
+if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('Sorry you do not have permission!');
+     const deleteCount = parseInt(args[0], 10);
+
+if(!deleteCount || deleteCount < 2 || deleteCount > 100)
+    return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
+
+  const fetched = await message.channel.fetchMessages({limit: deleteCount});
+  message.channel.bulkDelete(fetched)
+    .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+}
+
+  if(command === "help") {
+    const helpEmbed = new Discord.RichEmbed()
+    .setColor('#5eff74')
+    .setAuthor('Help Command', 'https://i.imgur.com/e8IuLhq.png', 'https://www.youtube.com/c/NJ3ZNAY0MYYT')
+    .addField('In the future', 'under construction', true)
+    .setTimestamp()
+	  .setFooter('Eridian', 'https://i.imgur.com/e8IuLhq.png');
+    const msg = await message.channel.send(helpEmbed);
+  }
+
+  if(command === "meme") {
+        let msg = await message.channel.send("Fetching a meme, please wait a second!");
+        fetch('https://meme-api.herokuapp.com/gimme')
+            .then(res => res.json())
+            .then(json => {
+                let embed = new Discord.RichEmbed()
+                    .setTitle(json.title)
+                    .setImage(json.url)
+                    .setFooter(`Link: ${json.postLink} | Subreddit: ${json.subreddit}`)
+                msg.edit(embed)
+            });
+    }
+
+    if(command === "say") {
+    const sayMessage = args.join(" ");
+	message.delete().catch(O_o=>{});
+    message.channel.send(sayMessage);
   }
 
     if(command === 'ban') {
