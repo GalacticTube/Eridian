@@ -118,6 +118,13 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
             .catch(e => message.reply(`Sorry I couldn't ban them! Error: ${e}`));
         message.reply(`:white_check_mark: User banned!`);
     }
+	
+	if(command === 'stop') {
+		serverQueue.voiceChannel.leave();
+        queue.delete(guild.id);
+	message.channel.send('Stopped Music');
+        return;
+	}
 
     if(command === 'play') {
         // !play url
