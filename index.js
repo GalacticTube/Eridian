@@ -73,6 +73,9 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 }
 
   if(command === "help") {
+    if (message.author.id === "572811135305252895") {
+      message.reply("Tobie to juz nic nie pomoze");
+  } else {
     const helpEmbed = new Discord.RichEmbed()
     .setColor('#5eff74')
     .setAuthor('Help Command', 'https://i.imgur.com/e8IuLhq.png', 'https://www.youtube.com/c/NJ3ZNAY0MYYT')
@@ -81,6 +84,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
 	  .setFooter('Eridian', 'https://i.imgur.com/e8IuLhq.png');
     const msg = await message.channel.send(helpEmbed);
   }
+}
 
   if(command === "meme") {
         let msg = await message.channel.send("Fetching a meme, please wait a second!");
