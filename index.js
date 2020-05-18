@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const fetch = require('node-fetch');
 const bot = new Discord.Client();
 const ytdl = require("ytdl-core");
-const prefix  = process.env.BOT_TOKEN;
+const prefix  = process.env.BOT_PREFIX;
 const status = process.env.BOT_STATUS;
 
 var queue = new Map();
