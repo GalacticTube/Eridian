@@ -71,6 +71,10 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
   message.channel.bulkDelete(fetched)
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 }
+	
+if(command === 'ss') {
+      const msg = await message.channel.send(`I am in ${bot.guilds.size}/100 guilds :D`);
+    }
 
   if(command === "help") {
     if (message.author.id === "572811135305252895") {
