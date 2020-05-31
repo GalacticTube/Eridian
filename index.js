@@ -121,7 +121,9 @@ if(command === 'ss') {
 
     if(command === "say") {
     const sayMessage = args.join(" ");
-	    message.delete(100);
+    const fetched = await message.channel.fetchMessages({limit: 2});
+    message.channel.bulkDelete(fetched)
+      .catch(error => console.log(`${error}`));
     message.channel.send(sayMessage);
   }
 
