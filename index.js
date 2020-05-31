@@ -70,7 +70,7 @@ if(command === 'dev') {
 
 if(command === 'developer') {
   if (message.author.id === "572811135305252895") {
-    const msg = await message.channel.send('You Created Me');
+    const msg = await message.channel.send('Why you asking? You created me!!!');
   } else {
   const msg = await message.channel.send('Created me NJ3ZNAY0MY_#0001');
   }
@@ -149,6 +149,9 @@ if(command === 'ss') {
 });
 
 async function play(message, serverQueue) {
+  if(args[0] === '') {
+    return;
+  } else {
     const args = message.content.split(" ");
 
     const voiceChannel = message.member.voiceChannel;
@@ -190,6 +193,7 @@ async function play(message, serverQueue) {
         serverQueue.songs.push(song);
         return message.channel.send(`${song.title} has been added to the queue!`);
     }
+}
 }
 
 function playSong(guild, song) {
