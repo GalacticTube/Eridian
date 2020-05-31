@@ -60,6 +60,22 @@ if(command === 'avatar') {
   message.reply(message.author.avatarURL);
 }
 
+if(command === 'dev') {
+  if (message.author.id === "572811135305252895") {
+    const msg = await message.channel.send('You Created Me');
+} else {
+  const msg = await message.channel.send('Created me NJ3ZNAY0MY_#0001');
+  }
+}
+
+if(command === 'developer') {
+  if (message.author.id === "572811135305252895") {
+    const msg = await message.channel.send('You Created Me');
+  } else {
+  const msg = await message.channel.send('Created me NJ3ZNAY0MY_#0001');
+  }
+}
+
   if(command === "purge") {
 if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('Sorry you do not have permission!');
      const deleteCount = parseInt(args[0], 10);
@@ -71,7 +87,7 @@ if(!deleteCount || deleteCount < 2 || deleteCount > 100)
   message.channel.bulkDelete(fetched)
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 }
-	
+
 if(command === 'ss') {
       const msg = await message.channel.send(`I am in ${bot.guilds.size}/100 guilds :D`);
     }
@@ -122,7 +138,7 @@ if(command === 'ss') {
             .catch(e => message.reply(`Sorry I couldn't ban them! Error: ${e}`));
         message.reply(`:white_check_mark: User banned!`);
     }
-		
+
 
     if(command === 'play') {
         // !play url
