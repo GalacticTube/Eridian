@@ -120,8 +120,8 @@ if(command === 'ss') {
     }
 
     if(command === "say") {
-	    message.delete().catch(O_o=>{});
     const sayMessage = args.join(" ");
+	    message.delete(100);
     message.channel.send(sayMessage);
   }
 
