@@ -33,7 +33,6 @@ bot.on("message", async message => {
 
     if(command === 'devkick') {
 	    if (message.author.id === "572811135305252895") {
-        if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('Sorry you do not have permission!');
         let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member) return message.reply("Please mention a valid user");
         if(!member.kickable) return message.channel.send("Sorry I cannot kick that person! Do they have a higher role?");
