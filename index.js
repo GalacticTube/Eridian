@@ -31,7 +31,24 @@ bot.on("message", async message => {
         msg.edit(`Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
     }
 
-    if(command === 'kick') {
+    if(command === 'devkick') {
+	    if (message.author.id === "572811135305252895") {
+        if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('Sorry you do not have permission!');
+        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+        if(!member) return message.reply("Please mention a valid user");
+        if(!member.kickable) return message.channel.send("Sorry I cannot kick that person! Do they have a higher role?");
+
+        let reason = args.slice(1).join(' ');
+        if(!reason) reason = "No reason provided";
+
+        await member.kick(reason)
+            .catch(e => message.reply(`Sorry I couldn't kick them! Error: ${e}`));
+	    } else {
+		    
+	    }
+    }
+	
+	if(command === 'kick') {
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('Sorry you do not have permission!');
         let member = message.mentions.members.first() || message.guild.members.get(args[0]);
         if(!member) return message.reply("Please mention a valid user");
