@@ -142,6 +142,7 @@ if(command === 'ss') {
     message.channel.send(sayMessage);
 	    } else {
 	message.reply("You don't have permission to use this command");
+	    }
   }
 
     if(command === 'ban') {
