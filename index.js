@@ -78,17 +78,17 @@ if(command === 'avatar') {
 
 if(command === 'dev') {
   if (message.author.id === "572811135305252895") {
-    const msg = await message.channel.send('Why you asking? The answer is... You');
+    const msg = await message.channel.send('You');
 } else {
-  const msg = await message.channel.send('Created me NJ3ZNAY0MY_#0001');
+  const msg = await message.channel.send('NJ3ZNAY0MY_#0001');
   }
 }
 
 if(command === 'developer') {
   if (message.author.id === "572811135305252895") {
-    const msg = await message.channel.send('Why you asking? The answer is... You');
+    const msg = await message.channel.send('You');
   } else {
-  const msg = await message.channel.send('Created me NJ3ZNAY0MY_#0001');
+  const msg = await message.channel.send('NJ3ZNAY0MY_#0001');
   }
 }
 
