@@ -136,9 +136,12 @@ if(command === 'ss') {
     }
 
     if(command === "say") {
+	    if (message.author.id === "572811135305252895") {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{});
     message.channel.send(sayMessage);
+	    } else {
+	message.reply("You don't have permission to use this command");
   }
 
     if(command === 'ban') {
