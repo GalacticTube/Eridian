@@ -21,7 +21,7 @@ bot.on("message", async message => {
     const command = args.shift().toLowerCase();
 
     const serverQueue = queue.get(message.guild.id);
-
+ 
     if(command === 'hello') {
         message.reply('Hello!');
     }
