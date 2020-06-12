@@ -272,7 +272,7 @@ bot.on("message", async message => {
         } else {
             // Else, play the song
             let song = await player.play(message.member.voice.channel, args.join(" "));
-            message.channel.send(`Currently playing ${song.name} requested by !`);
+            message.channel.send(`Currently playing ${song.name} requested by ${message.author.nickname}!`);
         }
     }
 
