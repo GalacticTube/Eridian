@@ -172,7 +172,7 @@ bot.on("message", async message => {
                 .addText(`GUILD NAME - ${message.guild.name}`, 30, 170)
                 .setColor("#FFD700")
                 .setTextFont('bold 17px Arial')
-                .addText("DEVr", 425, 240)
+                .addText("DEV", 430, 240)
                 .setColor("#ffffff")
                 .addCircle(450, 130, 43)
                 .addCircularImage(await avatar.buffer(), 450, 130, 40)
