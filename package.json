@@ -1,18 +1,23 @@
 {
-  "name": "eridian",
-  "version": "1.0.0",
-  "description": "Eridian bot for discord",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
+  "name": "bytecord-12.2.0",
+  "version": "0.0.0",
+  "description": "Bytecord 12.2.0",
+  "main": "app.js",
+  "author": {
+    "name": ""
   },
-  "author": "NJ3ZNAY0MY",
-  "license": "MIT",
   "dependencies": {
-    "discord.js": "^11.4.2",
+    "canvas": "^2.6.1",
+    "canvas-constructor": "^3.2.0",
+    "discord-music-player": "^3.0.3",
+    "discord.js": "^12.2.0",
     "ffmpeg": "0.0.4",
+    "fortnite-api-io": "^1.4.0",
+    "fs": "0.0.1-security",
+    "fs-nextra": "^0.5.1",
     "node-fetch": "^2.6.0",
     "opusscript": "0.0.7",
+    "simple-youtube-api": "^5.2.1",
     "ytdl-core": "^2.1.2"
   }
 }
