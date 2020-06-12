@@ -9,8 +9,8 @@ const { Player } = require("discord-music-player");
 const fsn = require('fs-nextra');
 
 //settings
-let prefix = "?"
-const status = "Almost 12.2.0";
+let prefix = process.env.BOT_PREFIX;
+const status = process.env.BOT_STATUS;
 
 //config
 const bot = new Discord.Client();
@@ -354,4 +354,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login("NjkwMzY3NzcyMTU2MjMxNzIw.XtraLQ.6zirDfWBa2lSqwcMwj_HU-gnCuM");
+bot.login(process.env.BOT_TOKEN);
