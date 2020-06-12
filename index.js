@@ -227,29 +227,6 @@ bot.on("message", async message => {
         message.channel.send(attachment);
     }
 
-    if (command === 'ship') {
-        console.log('#######################################')
-        console.log(`${message.author.tag} used "SHIP"`)
-        let member = message.mentions.users.first() || return;
-        const canvas = Caanvas.createCanvas(1920, 1080);
-        const ctx = canvas.getContext('2d');
-
-        const osiolek = await Caanvas.loadImage('https://plchldr.co/i/336x280?&bg=ff1696&text=');
-        const avatar = await Caanvas.loadImage(member.avatarURL({ format: 'jpg' }));
-        ctx.drawImage(osiolek, 0, 0, 1920, 1080);
-
-        ctx.beginPath();
-        ctx.arc(25 + 125, 100 + 125, 125, 0, Math.PI * 2, true);
-        ctx.closePath();
-        ctx.clip();
-
-        ctx.drawImage(avatar, 25, 100, 250, 250);
-
-        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'osiol_jebaniec.png');
-
-        message.channel.send(attachment);
-    }
-
     if (command === "cat") {
         console.log('#######################################')
         console.log(`${message.author.tag} used "CAT"`)
