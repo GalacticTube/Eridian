@@ -165,7 +165,6 @@ bot.on("message", async message => {
                 .addRect(400, 0, 150, 250)
                 .setColor("#ffffff")
                 .setTextFont('bold 40px Impact') //you can make it bold
-                .addText("PROFILE CARD", 110, 55)
                 .setColor("#08b1ff")
                 .setTextFont('bold 20px Impact')
                 .addText(`ID - ${message.author.id}`, 30, 110)
@@ -173,7 +172,7 @@ bot.on("message", async message => {
                 .addText(`GUILD NAME - ${message.guild.name}`, 30, 170)
                 .setColor("#FFD700")
                 .setTextFont('bold 17px Arial')
-                .addText("Developer", 411, 240)
+                .addText("Developer", 405, 240)
                 .setColor("#ffffff")
                 .addCircle(450, 130, 43)
                 .addCircularImage(await avatar.buffer(), 450, 130, 40)
@@ -189,7 +188,6 @@ bot.on("message", async message => {
                 .addRect(400, 0, 150, 250)
                 .setColor("#ffffff")
                 .setTextFont('bold 40px Impact') //you can make it bold
-                .addText("PROFILE CARD", 110, 55)
                 .setColor("#08b1ff")
                 .setTextFont('bold 20px Impact')
                 .addText(`ID - ${message.author.id}`, 30, 110)
