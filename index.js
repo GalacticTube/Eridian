@@ -275,6 +275,93 @@ bot.on("message", async message => {
             message.channel.send(`Currently playing ${song.name} requested by ${message.author.username}!`);
         }
     }
+    
+    if (command === 'queue') {
+        console.log('#######################################')
+        console.log(`${message.author.tag} used "QUEUE"`)
+        try {
+            let queue = await bot.player.getQueue(message.guild.id);
+            message.channel.send('Server queue:\n' + (queue.songs.map((song, i) => {
+                return `${i === 0 ? 'Current' : `#${i + 1}`} - ${song.name} | ${song.author}`
+            }).join('\n')));
+        }
+        catch
+        {
+            err => { console.log(err) }
+        }
+        
+    }
+
+    if (command === 'loop_on') {
+
+        console.log('#######################################')
+        console.log(`${message.author.tag} used "LOOP ON"`)
+        try {
+            bot.player.setRepeatMode(message.guild.id, true);
+            let song = await client.player.nowPlaying(message.guild.id);
+            message.channel.send(`${song.name} will be repeated indefinitely!`);
+        }
+        catch
+        {
+            err => { console.log(err) }
+        }
+    }
+
+    if (command === 'loop_off') {
+        console.log('#######################################')
+        console.log(`${message.author.tag} used "LOOP OFF"`)
+        try {
+            bot.player.setRepeatMode(message.guild.id, false);
+            let song = await client.player.nowPlaying(message.guild.id);
+            message.channel.send(`${song.name}  will no longer be repeated indefinitely!`);
+        }
+        catch
+        {
+            err => { console.log(err) }
+        }
+    }
+
+    if (command === 'pause') {
+        console.log('#######################################')
+        console.log(`${message.author.tag} used "PAUSE"`)
+        try {
+            let song = await bot.player.pause(message.guild.id);
+            message.channel.send(`${song.name} paused!`);
+        }
+        catch
+        {
+            err => { console.log(err) }
+        }
+        
+    }
+
+    if (command === 'resume') {
+        console.log('#######################################')
+        console.log(`${message.author.tag} used "RESUME"`)
+        try {
+            let song = await bot.player.resume(message.guild.id);
+            message.channel.send(`${song.name} resumed!`);
+        }
+        catch
+        {
+            err => { console.log(err) }
+        }
+        
+    }
+
+    if (command === 'current') {
+        console.log('#######################################')
+        console.log(`${message.author.tag} used "CURRENT"`)
+        try {
+            let song = await bot.player.nowPlaying(message.guild.id);
+            message.channel.send(`Currently playing ${song.name}...`);
+        }
+        catch
+        {
+            err => { console.log(err) }
+        }
+        
+    }
 
 
     if (command === 'kick') {
