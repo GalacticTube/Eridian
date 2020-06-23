@@ -36,15 +36,6 @@ bot.on("message", async message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
-    var uid = message.author.id;
-    fetch('https://nonima-beta.firebaseio.com/.json')
-            .then(res => res.json())
-            .then(json => {
-                if(json.Bans. + uid) {
-                    const msg = await message.channel.send("You are banned");
-                return;
-                }
-            });
     
 
     //commands
